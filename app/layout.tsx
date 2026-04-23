@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Tanim - Android & Flutter Developer',
+  description: 'Professional portfolio of Khandaker Tanim Mahmud Hoque. Android developer specializing in Kotlin, Jetpack Compose, and privacy-first security applications.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased">
+    <html lang="en" className="bg-slate-950 scroll-smooth">
+      <body className="font-sans antialiased bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
