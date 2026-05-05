@@ -729,7 +729,7 @@ const [message, setMessage] = useState('');
                   <div className="flex flex-wrap gap-4">
                     {/* Resume Button */}
                     <a
-                      href="/Khandaker_Tanim_Mahmud_Hoque_resume.pdf"
+                      href="/Khandaker_Tanim_Mahmud_Hoque_Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
