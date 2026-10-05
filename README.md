@@ -178,11 +178,11 @@ All portfolio data (projects, skills, certifications, experience) is defined as 
 
 ## 📄 License
 
-This project is currently not licensed for reuse, modification,
-or redistribution. All rights reserved by the project authors.
+Copyright © 2026 Tanim Mahmud. All rights reserved.
 
-Please do not copy, modify, distribute, or use this project
-without permission.
+This repository is publicly available for viewing and portfolio purposes.
+The source code may not be copied, modified, distributed, or reused
+without prior written permission.
 ---
 
 <p align="center">
