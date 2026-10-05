@@ -178,8 +178,11 @@ All portfolio data (projects, skills, certifications, experience) is defined as 
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is currently not licensed for reuse, modification,
+or redistribution. All rights reserved by the project authors.
 
+Please do not copy, modify, distribute, or use this project
+without permission.
 ---
 
 <p align="center">
