@@ -4,18 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import { Github, Code, Linkedin, Facebook, Mail, Phone, Play, Cpu, Database, Layers, Terminal, Box, Zap, GitBranch, Shield, Book, ExternalLink, Monitor, Award, Eye, CheckCircle, Calendar, Download, Send, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   SiKotlin,
-  SiOpenjdk,
-  SiC,
-  SiJavascript,
   SiPython,
   SiAndroid,
   SiFlutter,
-  SiNodedotjs,
   SiFastapi,
   SiFirebase,
-  SiSupabase,
   SiPostgresql,
-  SiSqlite,
   SiGit,
   SiLinux,
   SiAndroidstudio,
@@ -38,6 +32,68 @@ type Certificate = {
 
 export default function Portfolio() {
   const projects = [
+    {
+      id: 7,
+      title: 'KrishiMind',
+      subtitle: 'Agro-Intelligent System · Collaborative Team Project',
+      description: [
+        'A full-stack AI agriculture platform designed for farmers and agricultural officers in Bangladesh.',
+        'Provides crop recommendations, AI-powered disease scanning, and yield prediction.',
+        'Offers weather and market insights, risk monitoring, and bilingual farming guidance.',
+        'My contributions included project ideation, frontend development, documentation, testing, and ongoing improvements.',
+      ],
+      tech: ['FastAPI', 'PostgreSQL', 'Gemini API', 'Docker'],
+      github: 'https://github.com/TanimStu068/KrishiMind-Agro-Intelligent-System',
+      image: '/screenshots/krishimind_farmer_dashboard.png',
+      secondButton: { type: 'gallery', text: 'Project Screenshots', icon: <Monitor size={16} />, link: '#' },
+      screenshots: [
+        {
+          title: 'Welcome & Onboarding',
+          image: '/screenshots/krisimind_welcome.png',
+          description: ['Bilingual onboarding experience', 'Farmer-focused setup', 'Access to agricultural tools'],
+        },
+        {
+          title: 'Login',
+          image: '/screenshots/krishimind_login.png',
+          description: ['Secure account access', 'Designed for the farming community', 'Bilingual interface'],
+        },
+        {
+          title: 'Farmer Dashboard',
+          image: '/screenshots/krishimind_farmer_dashboard.png',
+          description: ['Personalized farm overview', 'Agricultural recommendations', 'Quick access to platform features'],
+        },
+        {
+          title: 'Market Prices',
+          image: '/screenshots/krishimind_marketprice.png',
+          description: ['Market price insights', 'District-level information', 'Support for informed selling'],
+        },
+        {
+          title: 'Disease Scanner',
+          image: '/screenshots/krishimind_disease_scanner.png',
+          description: ['AI-assisted crop disease scanning', 'Image-based diagnosis', 'Actionable treatment guidance'],
+        },
+        {
+          title: 'Crop Recommendation',
+          image: '/screenshots/krishimind_recomendation.png',
+          description: ['AI-powered crop suggestions', 'Recommendations based on farm conditions', 'Support for seasonal planning'],
+        },
+        {
+          title: 'Yield Prediction',
+          image: '/screenshots/krishimind_prediction.png',
+          description: ['Estimated harvest yield', 'Farm parameter-based prediction', 'Planning support for farmers'],
+        },
+        {
+          title: 'Intelligent Assistant',
+          image: '/screenshots/krishimind_assistant.png',
+          description: ['AI-powered farming assistance', 'Bilingual guidance', 'Answers to agricultural questions'],
+        },
+        {
+          title: 'Officer Dashboard',
+          image: '/screenshots/krishimind_officer_dashboard.png',
+          description: ['Agricultural activity overview', 'Officer analytics portal', 'Tools for localized farmer support'],
+        },
+      ],
+    },
     {
       id: 1,
       title: 'OmniGuard',
@@ -311,14 +367,6 @@ export default function Portfolio() {
     },
   ];
 
-  const skills = {
-    Languages: ['Kotlin', 'Dart', 'Java', 'Python', 'C/C++', 'JavaScript', 'SQL'],
-    'Android/Native': ['Jetpack Compose', 'MVVM', 'Hilt', 'Coroutines', 'Flow', 'Room', 'WorkManager'],
-    'Cross-Platform': ['Flutter', 'Provider'],
-    'Backend & DB': ['Node.js', 'Express', 'FastAPI', 'Firebase', 'Supabase', 'PostgreSQL'],
-    Tools: ['Git', 'Linux', 'Android Studio', 'VS Code', 'Postman'],
-  };
-
   const getTechColor = (tech: string) => {
     if (['Kotlin', 'Jetpack Compose', 'MVVM', 'Hilt', 'Room', 'Coroutines', 'WorkManager'].includes(tech)) return 'bg-green-500/20 text-green-300';
     if (['Flutter', 'Provider', 'Dart'].includes(tech)) return 'bg-blue-500/20 text-blue-300';
@@ -329,7 +377,7 @@ export default function Portfolio() {
 
   const achievements = [
     { stat: '500+', label: 'DSA Problems Solved', icon: <Code size={32} />, color: 'from-purple-500 to-purple-600' },
-    { stat: '10+', label: 'Production Apps Built', icon: <Layers size={32} />, color: 'from-blue-500 to-blue-600' },
+    { stat: '10+', label: 'Apps Built', icon: <Layers size={32} />, color: 'from-blue-500 to-blue-600' },
     { stat: '40+', label: 'Screens (UrbanOS)', icon: <Monitor size={32} />, color: 'from-green-500 to-green-600' },
     { stat: '5.00/5.00', label: 'Board Scholarship (HSC & SSC)', icon: <Award size={32} />, color: 'from-yellow-500 to-orange-500' },
   ];
@@ -471,7 +519,7 @@ const [message, setMessage] = useState('');
 
   const [typedBadgeText, setTypedBadgeText] = useState('');
   const [loopIndex, setLoopIndex] = useState(0);
-  const badgeMessage = 'Mobile & AI Engineer · Kotlin · Flutter';
+  const badgeMessage = '🚀 Aspiring Backend Engineer · AI Specialization';
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -699,11 +747,11 @@ const [message, setMessage] = useState('');
 
           <nav className="flex flex-wrap items-center justify-center gap-3 text-sm text-slate-300 sm:gap-5">
             <a href="#about" className="transition hover:text-cyan-300">About</a>
+            <a href="#experience" className="transition hover:text-cyan-300">Experience</a>
             <a href="#skills" className="transition hover:text-cyan-300">Skills</a>
             <a href="#projects" className="transition hover:text-cyan-300">Projects</a>
             <a href="#achievements" className="transition hover:text-cyan-300">Achievements</a>
             <a href="#education" className="transition hover:text-cyan-300">Education</a>
-            <a href="#experience" className="transition hover:text-cyan-300">Experience</a>
             <a href="#contact" className="transition hover:text-cyan-300">Contact</a>
           </nav>
         </div>
@@ -797,9 +845,113 @@ const [message, setMessage] = useState('');
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">About</p>
             <div className="mt-6 space-y-4 text-xl leading-relaxed sm:text-2xl">
-              <p className="font-bold italic text-slate-200">
-                "I build privacy-first Android apps and cross-platform Flutter applications with clean architecture, strong DSA fundamentals, and a focus on real-world deployment. I also explore new technologies and aim to specialize in ML and DL to build AI-powered modern apps and become an AI engineer. Additionally, I solve problems on LeetCode, GeeksforGeeks, and Codeforces."
+              <p className="text-slate-200">
+                I&apos;m a final-year Computer Science &amp; Engineering student at CUET focused on backend engineering, system design, and DevOps. I&apos;m also contributing to BanglaLLM development through research, testing, bug fixing, and ongoing improvements.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section py-32 px-4 sm:px-6 lg:px-8" id="experience">
+          <div className="max-w-7xl mx-auto">
+            <div className="section__header mb-16 text-center">
+              <p className="eyebrow mb-3 text-sm uppercase tracking-[0.3em] text-cyan-300">Experience</p>
+              <h2 className="text-5xl font-bold">
+                Professional <span className="gradient-text">experience</span>.
+              </h2>
+            </div>
+            <div className="space-y-8">
+              {[
+                {
+                  title: 'AI Research & Development Intern',
+                  organization: 'TechOptions',
+                  date: 'Jun 2026 – Present',
+                  location: 'Remote · Dhaka, Bangladesh',
+                  bullets: [
+                    'Developing and enhancing BanglaLLM and its AI capabilities.',
+                    'Researching and evaluating AI/ML models and services.',
+                  ],
+                  accent: 'from-cyan-500 to-sky-500',
+                },
+                {
+                  title: 'Industrial Attachment',
+                  organization: 'EchoLogyx Ltd',
+                  date: 'Aug 2026 – Sep 2026',
+                  location: 'Hybrid · Chattogram, Bangladesh',
+                  bullets: [
+                    'Worked with software engineering workflows and practices.',
+                    'Explored A/B testing, product development, and industry tools.',
+                  ],
+                  accent: 'from-fuchsia-500 to-violet-500',
+                },
+                {
+                  title: 'Team Leader - Academic Projects',
+                  organization: 'CUET Computer Science Department',
+                  date: '2021 - Present',
+                  location: '',
+                  bullets: [
+                    'Led 4-5 group projects as technical lead and project coordinator.',
+                    'Managed timelines, task delegation, and quality assurance for deliverables.',
+                    'Mentored junior students on best practices and collaborative development workflows.',
+                  ],
+                  accent: 'from-fuchsia-500 to-violet-500',
+                },
+              ].map((experience, index) => (
+                <div
+                  key={experience.title}
+                  data-type="experience"
+                  data-index={index}
+                  className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-800/65 p-8 shadow-xl shadow-slate-950/20 transition-all duration-700 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20 lg:flex lg:items-center lg:gap-8 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} ${
+                    visibleExperiences.has(index)
+                      ? 'translate-x-0 opacity-100'
+                      : index % 2 === 0
+                        ? '-translate-x-full opacity-0'
+                        : 'translate-x-full opacity-0'
+                  }`}
+                >
+                  <div className="relative z-10 flex flex-col items-center gap-6 text-center lg:w-64 lg:items-center lg:text-center">
+                    <div className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br ${experience.accent} text-white shadow-2xl shadow-current/30`}>
+                      {index === 0 ? (
+                        <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                          <circle cx="9" cy="7" r="4" />
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                      ) : index === 1 ? (
+                        <GitBranch size={32} />
+                      ) : (
+                        <Award size={32} />
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 flex-1">
+                    <div className="absolute right-0 top-0 hidden text-8xl font-black text-white/5 sm:block">"</div>
+                    <div className="relative space-y-5">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div>
+                          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">{experience.organization}</p>
+                          <h3 className="text-2xl font-bold text-white">{experience.title}</h3>
+                          {experience.location && <p className="mt-1 text-sm text-slate-400">{experience.location}</p>}
+                        </div>
+                        <span className="rounded-full border border-cyan-500/50 bg-slate-800/80 px-4 py-1 text-sm text-cyan-300">
+                          {experience.date}
+                        </span>
+                      </div>
+
+                      <ul className="space-y-4">
+                        {experience.bullets.map((bullet, bulletIndex) => (
+                          <li key={bulletIndex} className="flex items-start gap-3 text-slate-200">
+                            <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-cyan-400" />
+                            <span className="text-base leading-7">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -822,48 +974,38 @@ const [message, setMessage] = useState('');
                   {
                     category: 'Languages',
                     skills: [
-                      { icon: <SiKotlin size={48} className="text-purple-400" />, title: 'Kotlin' },
-                      { icon: <SiDart size={48} className="text-blue-400" />, title: 'Dart' },
-                      { icon: <SiOpenjdk size={48} className="text-red-500" />, title: 'Java' },
-                      { icon: <SiPython size={48} className="text-yellow-400" />, title: 'Python' },
                       { icon: <SiCplusplus size={48} className="text-green-400" />, title: 'C/C++' },
-                      { icon: <SiJavascript size={48} className="text-yellow-300" />, title: 'JavaScript' },
-                      { icon: <SiSqlite size={48} className="text-blue-500" />, title: 'SQL' },
+                      { icon: <SiPython size={48} className="text-yellow-400" />, title: 'Python' },
+                      { icon: <SiDart size={48} className="text-blue-400" />, title: 'Dart' },
+                      { icon: <SiKotlin size={48} className="text-purple-400" />, title: 'Kotlin' },
+                      { icon: <Database size={48} className="text-blue-500" />, title: 'SQL' },
                     ],
                   },
                   {
-                    category: 'Android/Native',
-                    skills: [
-                      { icon: <SiAndroid size={48} className="text-green-400" />, title: 'Jetpack Compose' },
-                      { icon: <SiAndroid size={48} className="text-indigo-400" />, title: 'MVVM' },
-                      { icon: <SiAndroid size={48} className="text-orange-400" />, title: 'Hilt' },
-                      { icon: <SiAndroid size={48} className="text-yellow-500" />, title: 'Coroutines' },
-                      { icon: <SiAndroid size={48} className="text-blue-300" />, title: 'Flow' },
-                      { icon: <SiAndroid size={48} className="text-green-500" />, title: 'Room' },
-                      { icon: <SiAndroid size={48} className="text-purple-500" />, title: 'WorkManager' },
-                      { icon: <SiAndroid size={48} className="text-red-400" />, title: 'PackageManager' },
-                      { icon: <SiAndroid size={48} className="text-teal-400" />, title: 'StorageStatsManager' },
-                      { icon: <SiAndroid size={48} className="text-pink-400" />, title: 'ActivityManager' },
-                      { icon: <SiAndroid size={48} className="text-orange-500" />, title: 'BatteryManager' },
-                      { icon: <SiAndroid size={48} className="text-indigo-500" />, title: 'UsageStatsManager' },
-                    ],
-                  },
-                  {
-                    category: 'Cross-Platform',
+                    category: 'Mobile',
                     skills: [
                       { icon: <SiFlutter size={48} className="text-blue-400" />, title: 'Flutter' },
-                      { icon: <SiFlutter size={48} className="text-green-400" />, title: 'Provider' },
+                      { icon: <SiAndroid size={48} className="text-green-400" />, title: 'Android' },
+                      { icon: <Layers size={48} className="text-cyan-400" />, title: 'Provider' },
                     ],
                   },
                   {
                     category: 'Backend & DB',
                     skills: [
-                      { icon: <SiNodedotjs size={48} className="text-green-500" />, title: 'Node.js (Express)' },
                       { icon: <SiFastapi size={48} className="text-blue-500" />, title: 'FastAPI' },
-                      { icon: <SiFirebase size={48} className="text-orange-400" />, title: 'Firebase' },
-                      { icon: <SiSupabase size={48} className="text-green-400" />, title: 'Supabase' },
                       { icon: <SiPostgresql size={48} className="text-blue-600" />, title: 'PostgreSQL' },
-                      { icon: <SiSqlite size={48} className="text-gray-400" />, title: 'SQLite' },
+                      { icon: <Database size={48} className="text-orange-400" />, title: 'SQLAlchemy' },
+                      { icon: <SiFirebase size={48} className="text-orange-400" />, title: 'Firebase' },
+                    ],
+                  },
+                  {
+                    category: 'AI',
+                    skills: [
+                      { icon: <Cpu size={48} className="text-cyan-400" />, title: 'Generative AI' },
+                      { icon: <Zap size={48} className="text-yellow-400" />, title: 'Gemini API' },
+                      { icon: <Layers size={48} className="text-purple-400" />, title: 'LLMs' },
+                      { icon: <Code size={48} className="text-blue-400" />, title: 'Machine Learning' },
+                      { icon: <Database size={48} className="text-green-400" />, title: 'Deep Learning' },
                     ],
                   },
                   {
@@ -871,6 +1013,7 @@ const [message, setMessage] = useState('');
                     skills: [
                       { icon: <SiGit size={48} className="text-orange-500" />, title: 'Git' },
                       { icon: <SiLinux size={48} className="text-yellow-400" />, title: 'Linux' },
+                      { icon: <Box size={48} className="text-blue-400" />, title: 'Docker' },
                       { icon: <SiAndroidstudio size={48} className="text-green-500" />, title: 'Android Studio' },
                       { icon: <Code size={48} className="text-blue-500" />, title: 'VS Code' },
                       { icon: <SiPostman size={48} className="text-orange-400" />, title: 'Postman' },
@@ -972,7 +1115,7 @@ const [message, setMessage] = useState('');
                             onClick={() => openGallery(project)}
                             className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-500 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-400 hover:bg-cyan-500 hover:text-white"
                           >
-                            <Monitor size={16} /> Demo Screens
+                            <Monitor size={16} /> {project.id === 7 ? 'Project Screenshots' : 'Demo Screens'}
                           </button>
                         )}
                       </div>
@@ -1038,6 +1181,15 @@ const [message, setMessage] = useState('');
                   );
                 })}
               </div>
+            </div>
+
+            <div className="mb-20 rounded-3xl border border-cyan-500/20 bg-slate-800/50 p-8 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 text-white">
+                <Award size={28} />
+              </div>
+              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Project Competition</p>
+              <h3 className="mt-3 text-2xl font-bold text-white">2nd Place, Group Project Competition</h3>
+              <p className="mt-2 text-slate-300">Mysoft Heaven Workshop @ CUET · Team Carbon Silicon</p>
             </div>
 
             {/* Certifications */}
@@ -1230,115 +1382,6 @@ const [message, setMessage] = useState('');
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section py-32 px-4 sm:px-6 lg:px-8" id="experience">
-        <div className="max-w-7xl mx-auto">
-          <div className="section__header mb-16 text-center">
-            <p className="eyebrow mb-3 text-sm uppercase tracking-[0.3em] text-cyan-300">Experience</p>
-            <h2 className="text-5xl font-bold">
-              Leadership, volunteering, and <span className="gradient-text">community impact</span>.
-            </h2>
-          </div>
-          <div className="space-y-8">
-            {[
-              {
-                title: 'Volunteer & Community Organizer',
-                organization: 'CUET Islami Mahfil & CUET Islamic Ilm Seeker Society',
-                date: '2022 - Present',
-                bullets: [
-                  <>
-                    Organized <span className="font-semibold text-cyan-300">500+ students</span> across campus for community outreach events.
-                  </>,
-                  <>
-                    Coordinated <span className="font-semibold text-cyan-300">100+ participants</span> in religious and educational seminars.
-                  </>,
-                  'Managed volunteer teams and event logistics for successful community engagement.',
-                ],
-                accent: 'from-cyan-500 to-sky-500',
-              },
-              {
-                title: 'Team Leader - Academic Projects',
-                organization: 'CUET Computer Science Department',
-                date: '2021 - Present',
-                bullets: [
-                  'Led 4-5 group projects as technical lead and project coordinator.',
-                  'Managed timelines, task delegation, and quality assurance for deliverables.',
-                  'Mentored junior students on best practices and collaborative development workflows.',
-                ],
-                accent: 'from-fuchsia-500 to-violet-500',
-              },
-              {
-                title: 'Knowledge Contest Participant',
-                organization: 'CUET Sirat Competition',
-                date: '2023',
-                bullets: [
-                  'Participated in university-level competition testing Islamic studies and general knowledge.',
-                  'Demonstrated analytical thinking and rapid decision-making under competitive pressure.',
-                  'Contributed to team strategy and knowledge sharing for improved collective performance.',
-                ],
-                accent: 'from-emerald-500 to-lime-400',
-              },
-            ].map((experience, index) => (
-              <div
-                key={experience.title}
-                data-type="experience"
-                data-index={index}
-                className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-800/65 p-8 shadow-xl shadow-slate-950/20 transition-all duration-700 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20 lg:flex lg:items-center lg:gap-8 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} ${
-                  visibleExperiences.has(index)
-                    ? index % 2 === 0
-                      ? 'translate-x-0 opacity-100'
-                      : 'translate-x-0 opacity-100'
-                    : index % 2 === 0
-                      ? '-translate-x-full opacity-0'
-                      : 'translate-x-full opacity-0'
-                }`}
-              >
-
-                <div className="relative z-10 flex flex-col items-center gap-6 text-center lg:w-64 lg:items-center lg:text-center">
-                  <div className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br ${experience.accent} text-white shadow-2xl shadow-current/30`}>
-                    {index === 0 ? (
-                      <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                        <circle cx="9" cy="7" r="4" />
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                      </svg>
-                    ) : index === 1 ? (
-                      <GitBranch size={32} />
-                    ) : (
-                      <Award size={32} />
-                    )}
-                  </div>
-                </div>
-
-                <div className="relative z-10 flex-1">
-                  <div className="absolute right-0 top-0 hidden text-8xl font-black text-white/5 sm:block">"</div>
-                  <div className="relative space-y-5">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">{experience.organization}</p>
-                        <h3 className="text-2xl font-bold text-white">{experience.title}</h3>
-                      </div>
-                      <span className="rounded-full border border-cyan-500/50 bg-slate-800/80 px-4 py-1 text-sm text-cyan-300">
-                        {experience.date}
-                      </span>
-                    </div>
-
-                    <ul className="space-y-4">
-                      {experience.bullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex} className="flex items-start gap-3 text-slate-200">
-                          <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-cyan-400" />
-                          <span className="text-base leading-7">{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

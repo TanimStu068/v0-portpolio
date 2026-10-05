@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Tanim - Android & Flutter Developer',
-  description: 'Professional portfolio of Khandaker Tanim Mahmud Hoque. Android developer specializing in Kotlin, Jetpack Compose, and privacy-first security applications.',
+  title: 'Tanim - Aspiring Backend Engineer',
+  description: 'Portfolio of Khandaker Tanim Mahmud Hoque, an aspiring backend engineer focused on system design, DevOps, and AI research.',
   generator: 'v0.app',
   icons: {
     icon: [
